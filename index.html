@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&family=Red+Hat+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/app.css" />
+
+  <title>Movies List</title>
+</head>
+<body>
+  <header id="header" class="header-container">
+    <span class="header-arrow inactive">&lt;</span>
+    <h1 class="header-title">Movies List</h1>
+    <h1 class="header-title header-title--categoryView inactive">Action</h1>
+
+    <form id="searchForm" class="header-searchForm">
+      <input type="text" placeholder="Write a movie here" />
+      <button>🔍</button>
+    </form>
+  </header>
+
+  <section id="trendingPreview" class="trendingPreview-container">
+    <div class="trendingPreview-header">
+      <h2 class="trendingPreview-title">Trendings</h2>
+      <button class="trendingPreview-btn">See more</button>
+    </div>
+
+    <article class="trendingPreview-movieList">
+      <div class="movie-container">
+        <img
+          src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+          class="movie-img"
+          alt="Movie's name"
+        />
+      </div>
+
+      <div class="movie-container">
+        <img
+          src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+          class="movie-img"
+          alt="Movie's name"
+        />
+      </div>
+
+      <div class="movie-container">
+        <img
+          src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+          class="movie-img"
+          alt="Movie's name"
+        />
+      </div>
+    </article>
+  </section>
+
+  <section id="categoriesPreview" class="categoriesPreview-container">
+    <h2 class="categoriesPreview-title">Categories</h2>
+
+    <article class="categoriesPreview-list">
+      <div class="category-container">
+        <h3 id="id28" class="category-title">Romance</h3>
+      </div>
+
+      <div class="category-container">
+        <h3 id="id16" class="category-title">Drama</h3>
+      </div>
+
+      <div class="category-container">
+        <h3 id="id14" class="category-title">Action</h3>
+      </div>
+    </article>
+  </section>
+
+  <section id="genericList" class="genericList-container inactive">
+    <div class="movie-container">
+      <img
+        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        class="movie-img"
+        alt="Movie's name"
+      />
+    </div>
+
+    <div class="movie-container">
+      <img
+        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        class="movie-img"
+        alt="Movie's name"
+      />
+    </div>
+
+    <div class="movie-container">
+      <img
+        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        class="movie-img"
+        alt="Movie's name"
+      />
+    </div>
+  </section>
+
+  <section id="movieDetail" class="movieDetail-container inactive">
+    <h1 class="movieDetail-title">Deadpool</h1>
+    <span class="movieDetail-score">7.6</span>
+    <p class="movieDetail-description">
+      Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.
+    </p>
+
+    <article class="categories-list">
+      <div class="category-container">
+        <h3 id="id28" class="category-title">Romance</h3>
+      </div>
+
+      <div class="category-container">
+        <h3 id="id16" class="category-title">Drama</h3>
+      </div>
+
+      <div class="category-container">
+        <h3 id="id14" class="category-title">Action</h3>
+      </div>
+    </article>
+
+    <article class="relatedMovies-container">
+      <h2 class="relatedMovies-title">Similar movies</h2>
+
+      <div class="relatedMovies-scrollContainer">
+        <div class="movie-container">
+          <img
+            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+            class="movie-img"
+            alt="Movie's name"
+          />
+        </div>
+        
+        <div class="movie-container">
+          <img
+            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+            class="movie-img"
+            alt="Movie's name"
+          />
+        </div>
+        
+        <div class="movie-container">
+          <img
+            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+            class="movie-img"
+            alt="Movie's name"
+          />
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    <h2>Created by @diegotellezc</h2>
+    
+    <ul class="social-icons">
+      <li>
+        <a href="https://www.linkedin.com/in/diego-t%C3%A9llez-contreras/" class="social-icon" target="_blank" id="linkedin">
+            <img src="./iconos/linkedin.png" alt="LinkedIn">
+        </a>
+      </li>
+  
+      <li>
+          <a href="https://github.com/diegotellezc" class="social-icon" target="_blank" id="github">
+              <img src="./iconos/github.png" alt="Github">
+          </a>
+      </li>
+  
+      <li>
+          <a href="https://www.youtube.com/channel/UC12Amn7rjHB4BYmA3KfULaQ" class="social-icon" target="_blank" id="youtube">
+              <img src="./iconos/youtube.png" alt="Youtube">
+          </a>
+      </li>  
+    </ul>
+    
+  </footer>
+  
+  <script src="./src/secrets.js"></script>
+  <script src="./src/main.js"></script>
+</body>
+</html>

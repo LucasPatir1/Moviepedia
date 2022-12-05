@@ -1,0 +1,23 @@
+{
+  "name": "curso-api-rest-javascript-practico",
+  "version": "1.0.0",
+  "description": "Movie List",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Diego Téllez <diegotellezdev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/platzi/curso-api-rest-javascript-practico/issues"
+  },
+  "homepage": "https://github.com/platzi/curso-api-rest-javascript-practico#readme",
+  "keywords": [
+    "javascript",
+    "movies"
+  ]
+}
