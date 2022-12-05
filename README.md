@@ -1,2 +1,2 @@
-# curso-api-rest-javascript-practico
-Curso Práctico de Consumo de API REST con JavaScript
+# movies-list
+Movies list application by Diego Téllez
