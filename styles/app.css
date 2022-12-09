@@ -35,6 +35,8 @@
 
 html {
   background-color: var(--orange-medium);
+  min-height: 100vh;
+  height: max-content;
 }
 
 body {
@@ -46,7 +48,9 @@ body {
   font-size: 16px;
   margin: 4px 0 0 0;
   padding: 0;
-  height: 100%;
+  padding-bottom: 36px;
+  /* height: 100%; */
+  min-height: 100vh;
 }
 
 h1, h2, h3 {
@@ -135,8 +139,8 @@ button {
 }
 
 .header-container--long {
-  background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url(https://pics.filmaffinity.com/Deadpool-777527803-large.jpg);
+  /* background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url(https://pics.filmaffinity.com/Deadpool-777527803-large.jpg); */
   background-size: cover !important;
   height: 480px;
   position: fixed;
@@ -236,6 +240,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* color: var(--blue-dark); */
 }
 
 .category-title::before {
@@ -297,7 +302,8 @@ button {
   margin-top: 403px;
   z-index: 1;
   position: absolute;
-  background-color: var(--purple-light-1);
+  background: rgb(11,31,44);
+  background: radial-gradient(circle, rgba(11,31,44,1) 0%, rgba(13,44,64,1) 24%, rgba(13,44,64,1) 61%, rgba(11,31,44,1) 100%);
 }
 
 .movieDetail-title {
@@ -305,6 +311,7 @@ button {
   width: 80%;
   margin: 0 0 16px 0;
   padding: 0;
+  color: var(--orange-medium);
 }
 
 .movieDetail-score {
@@ -312,6 +319,7 @@ button {
   text-align: right;
   width: 18%;
   font-weight: var(--font-weight-title2);
+  color: var(--purple-light-1);
 }
 .movieDetail-score::before {
   content: '★';
@@ -321,6 +329,7 @@ button {
 
 .movieDetail-description {
   margin: 0 0 24px 0;
+  color: var(--purple-light-1);
 }
 
 .relatedMovies-container {

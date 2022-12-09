@@ -10,17 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&family=Red+Hat+Display:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles/app.css" />
 
-  <title>Movies List</title>
+  <title>Moviepedia</title>
 </head>
 <body>
   <header id="header" class="header-container">
     <span class="header-arrow inactive">&lt;</span>
-    <h1 class="header-title">Movies List</h1>
+    <h1 class="header-title">Moviepedia</h1>
     <h1 class="header-title header-title--categoryView inactive">Action</h1>
 
     <form id="searchForm" class="header-searchForm">
       <input type="text" placeholder="Write a movie here" />
-      <button>🔍</button>
+      <button id="searchBtn">🔍</button>
     </form>
   </header>
 
@@ -54,29 +54,15 @@
   </section>
 
   <section id="genericList" class="genericList-container inactive">
-    <div class="movie-container">
-      <img
-        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-        class="movie-img"
-        alt="Movie's name"
-      />
-    </div>
 
-    <div class="movie-container">
+    <!-- <div class="movie-container">
       <img
         src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
         class="movie-img"
         alt="Movie's name"
       />
-    </div>
+    </div> -->
 
-    <div class="movie-container">
-      <img
-        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-        class="movie-img"
-        alt="Movie's name"
-      />
-    </div>
   </section>
 
   <section id="movieDetail" class="movieDetail-container inactive">
@@ -158,6 +144,7 @@
   
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./src/secrets.js"></script>
+  <script src="./src/nodes.js"></script>
   <script src="./src/main.js"></script>
   <script src="./src/navigation.js"></script>
 </body>
