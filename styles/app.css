@@ -468,6 +468,23 @@ footer h2 {
   width: 20px;
 }
 
+/* select */
+
+#languageOptions {
+  position: absolute;
+  right: 5%;
+  width: 46px;
+  height: 32px;
+  /* display: inline-block; */
+	cursor: pointer;
+  padding: 1px 5px;
+  height: 42px;
+  border: 0;
+	background: var(--blue-medium);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
 /* Navigation */
 .inactive {
   display: none;

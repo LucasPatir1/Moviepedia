@@ -1,6 +1,49 @@
 let page = 1
 let maxPage;
 let infiniteScroll;
+let lang = "es";
+
+const countries = [
+    {
+        name: "usa",
+        language: "en-US",
+        flag: '🇺🇸',
+    }, 
+    {
+        name: "col",
+        language: "es",
+        flag: "🇨🇴",
+    },
+    {
+        name: "fra",
+        language: "fr",
+        flag: "🇫🇷",
+    },
+    {
+        name: "bra",
+        language: "pt-BR",
+        flag: "🇧🇷",
+    },
+]
+
+async function getLanguages() {
+    countries.forEach((country) => {
+    const languageOption = document.createElement('option');
+    languageOption.setAttribute('value', country.language );
+    languageOption.setAttribute('for', 'language');
+    const languageText = document.createTextNode(country.flag);
+    languageOption.appendChild(languageText);
+    languageOptions.appendChild(languageOption);
+    });
+};
+getLanguages()
+
+// listeners
+languageOptions.addEventListener("change", (event) => {
+    lang = event.target.value;
+    console.log(lang);
+    homePage();
+});
 
 searchFormBtn.addEventListener("click", () => {
     location.hash = "#search=" + searchFormInput.value    
@@ -22,11 +65,12 @@ searchFormInput.addEventListener('keyup', (event) => {
     }
 });
 
-
 window.addEventListener("DOMContentLoaded", navigator, false)
 window.addEventListener("hashchange", navigator, false)
 window.addEventListener("scroll", infiniteScroll, { passive: false })
 
+
+// navigation functions
 function navigator () {
     console.log({ location });
 
@@ -57,7 +101,6 @@ function navigator () {
 function homePage() {
     console.log("HOME!!");
 
-    
     headerSection.classList.remove("header-container--long")
     headerSection.style.background = "";
     arrowBtn.classList.add("inactive");
@@ -65,6 +108,8 @@ function homePage() {
     headerTitle.classList.remove("inactive")
     headerCategoryTitle.classList.add("inactive")
     searchForm.classList.remove("inactive")
+    languageOptions.classList.remove("inactive");
+    
 
     trendingPreviewSection.classList.remove("inactive")
     categoriesPreviewSection.classList.remove("inactive")
@@ -87,6 +132,7 @@ function categoriesPage() {
     headerTitle.classList.add("inactive")
     headerCategoryTitle.classList.remove("inactive")
     searchForm.classList.add("inactive")
+    languageOptions.classList.add("inactive")
 
     trendingPreviewSection.classList.add("inactive")
     categoriesPreviewSection.classList.add("inactive")
@@ -96,7 +142,7 @@ function categoriesPage() {
 
     const [_, categoryData] = location.hash.split("=")
     const [categoryId, categoryName] = categoryData.split("-")
-    const categoryNameOk = categoryName.replace("%20", " ")
+    const categoryNameOk = decodeURI(categoryName.replace("%20", " ")) 
 
     getMoviesByCategory(categoryId);
     headerCategoryTitle.innerHTML = categoryNameOk
@@ -114,6 +160,7 @@ function movieDetailsPage() {
     headerTitle.classList.add("inactive")
     headerCategoryTitle.classList.add("inactive")
     searchForm.classList.add("inactive")
+    languageOptions.classList.add("inactive")
 
     trendingPreviewSection.classList.add("inactive")
     categoriesPreviewSection.classList.add("inactive")
@@ -135,6 +182,7 @@ function searchPage() {
     headerTitle.classList.add("inactive")
     headerCategoryTitle.classList.add("inactive")
     searchForm.classList.remove("inactive")
+    languageOptions.classList.add("inactive")
 
     trendingPreviewSection.classList.add("inactive")
     categoriesPreviewSection.classList.add("inactive")
@@ -159,6 +207,7 @@ function trendsPage() {
     headerTitle.classList.add("inactive")
     headerCategoryTitle.classList.remove("inactive")
     searchForm.classList.add("inactive")
+    languageOptions.classList.add("inactive")
 
     trendingPreviewSection.classList.add("inactive")
     categoriesPreviewSection.classList.add("inactive")

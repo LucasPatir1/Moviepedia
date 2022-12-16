@@ -6,7 +6,7 @@ const api = axios.create({
         "Content-Type": "application/json;charset=utf-8"
     },
     params: {
-        "api_key": API_KEY
+        "api_key": API_KEY,
     },
 })
 
@@ -128,14 +128,22 @@ function createCategories(categories, container) {
 
 // Llamados a la API
 async function getTrendingMoviesPreview() {
-    const { data } = await api("trending/movie/day")
+    const { data } = await api("trending/movie/day", {
+        params: {
+            language: lang,
+        }
+    })
     const movies = data.results
 
     createMovies(movies, trendingMoviesPreviewList, { lazyLoad: true, clean: true })
 }
 
 async function getCategoriesPreview() {
-    const { data } = await api("genre/movie/list")
+    const { data } = await api("genre/movie/list", {
+        params: {
+            language: lang,
+        }
+    })
     const categories = data.genres
 
     categoriesPreviewList.innerHTML = ""
@@ -146,6 +154,7 @@ async function getMoviesByCategory(id) {
     const { data } = await api("discover/movie", {
         params: {
             with_genres: id,
+            language: lang,
         }
     })
     const movies = data.results
@@ -169,6 +178,7 @@ function getPaginatedMoviesByCategory(id) {
                 params: {
                     with_genres: id,
                     page,
+                    language: lang,
                 }
             })
             const movies = data.results
@@ -188,6 +198,7 @@ async function getMoviesBySearch(query) {
     const { data } = await api("search/movie", {
         params: {
             query,
+            language: lang,
         }
     })
     const movies = data.results
@@ -198,7 +209,11 @@ async function getMoviesBySearch(query) {
 }
 
 async function getTrendingMovies() {
-    const { data } = await api("trending/movie/day")
+    const { data } = await api("trending/movie/day", {
+        params: {
+            language: lang,
+        }
+    })
     const movies = data.results
     maxPage = data.total_pages
 
@@ -223,6 +238,7 @@ async function getPaginatedTrendingMovies() {
         const { data } = await api("trending/movie/day", {
             params: {
                 page,
+                language: lang,
             }
         })
         const movies = data.results
@@ -237,7 +253,11 @@ async function getPaginatedTrendingMovies() {
 }
 
 async function getMovieById(id) {
-    const { data: movie } = await api("movie/" + id)
+    const { data: movie } = await api("movie/" + id, {
+        params: {
+            language: lang,
+        }
+    })
 
     const movieImgUrl = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
 
@@ -259,7 +279,11 @@ async function getMovieById(id) {
 }
 
 async function getRelatedMoviesId(id) {
-    const { data } = await api(`movie/${id}/similar`)
+    const { data } = await api(`movie/${id}/similar`, {
+        params: {
+            language: lang,
+        }
+    })
     const relatedMovies = data.results
 
     createMovies(relatedMovies, relatedMoviesContainer, { lazyLoad: true, clean: true })
@@ -281,6 +305,7 @@ function getPaginatedMoviesBySearch(query) {
                 params: {
                     query,
                     page,
+                    language: lang,
                 }
             })
             const movies = data.results
