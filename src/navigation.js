@@ -46,7 +46,9 @@ languageOptions.addEventListener("change", (event) => {
 });
 
 searchFormBtn.addEventListener("click", () => {
-    location.hash = "#search=" + searchFormInput.value    
+    if(searchFormInput.value) {
+        location.hash = "#search=" + searchFormInput.value    
+    }
 })
 
 trendingBtn.addEventListener("click", () => {
