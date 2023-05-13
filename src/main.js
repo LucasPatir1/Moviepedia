@@ -74,12 +74,12 @@ function createMovies(movies, container, { lazyLoad = false, clean = true } = {}
             location.hash = "#movie=" + movie.id
         })
         movieImg.addEventListener("error", () => {
-            movieImg.setAttribute("src", "https://imgur.com/dPevAQM.png")
+            movieImg.setAttribute("src", "https://img.freepik.com/vector-gratis/ups-error-404-ilustracion-concepto-robot-roto_114360-5529.jpg?w=2000")
             const movieTitleText  = document.createTextNode(movieImg.getAttribute('alt'));
             const movieTitle = document.createElement('span');
             movieTitle.classList.add("notFoundImgTitle")
-            movieContainer.appendChild(movieTitle);
-            movieTitle.appendChild(movieTitleText);
+            // movieContainer.appendChild(movieTitle);
+            // movieTitle.appendChild(movieTitleText);
         })
 
         const movieBtn = document.createElement("button")
@@ -194,10 +194,9 @@ function getPaginatedMoviesByCategory(id) {
 }
 
 async function getMoviesBySearch(query) {
-    console.log(query);
     const { data } = await api("search/movie", {
         params: {
-            query,
+            query: decodeURI(query),
             language: lang,
         }
     })

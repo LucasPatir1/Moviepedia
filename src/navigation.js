@@ -142,7 +142,7 @@ function categoriesPage() {
 
     const [_, categoryData] = location.hash.split("=")
     const [categoryId, categoryName] = categoryData.split("-")
-    const categoryNameOk = decodeURI(categoryName.replace("%20", " ")) 
+    const categoryNameOk = decodeURI(categoryName) 
 
     getMoviesByCategory(categoryId);
     headerCategoryTitle.innerHTML = categoryNameOk

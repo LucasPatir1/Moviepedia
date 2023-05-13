@@ -34,7 +34,7 @@
 }
 
 html {
-  background-color: var(--orange-medium);
+  background-color: var(--blue-dark);
   min-height: 100vh;
   height: max-content;
 }
@@ -106,19 +106,35 @@ button {
 /* Shared */
 .header-container, .trendingPreview-header, .categoriesPreview-container, .liked-header {
   padding: 0 24px;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .trendingPreview-container, .categoriesPreview-container, .liked-container, footer {
   margin-top: 36px;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .trendingPreview-header, .categoriesPreview-title, .liked-header {
   margin-bottom: 24px;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .movie-container {
   cursor: pointer;
   position: relative;
+  min-width: 125px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .movie-container--loading {
@@ -145,6 +161,7 @@ button {
 .movie-img {
   border-radius: 8px;
   min-height: 275px;
+  object-fit: cover;
 }
 
 .movie-btn {
@@ -346,15 +363,20 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 32px 24px;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .genericList-container .movie-container {
   display: inline-block;
   width: 47.5%;
+  max-width: 300px;
 }
 
 .genericList-container .movie-img {
   width: 100%;
+  
 }
 
 
@@ -368,6 +390,8 @@ button {
   position: absolute;
   background: rgb(11,31,44);
   background: radial-gradient(circle, rgba(11,31,44,1) 0%, rgba(13,44,64,1) 24%, rgba(13,44,64,1) 61%, rgba(11,31,44,1) 100%);
+  width: 100%;
+  
 }
 
 .movieDetail-title {
@@ -429,8 +453,9 @@ button {
 }
 
 .notFoundImgTitle {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  bottom: 0%;
+  z-index: 10;
   font-size: 24px;
 }
 
@@ -445,6 +470,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  max-width: none;
 }
 footer h2 {
   color: var(--purple-light-2);
@@ -493,6 +519,10 @@ footer h2 {
 @media (min-width: 768px) {
   .category-container {
     width: 15%;
+  }
+  .header-container--long {
+  max-width: 500px;
+  left: 33%;
   }
 }
 
